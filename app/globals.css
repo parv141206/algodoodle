@@ -1,33 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --s: 25rem; /* control the size*/
+  --c1: #7a7a7a11;
+  --c2: #79797900;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --_g: #0000 90deg, var(--c1) 0;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.bg-pattern {
+  background: conic-gradient(from 90deg at 2px 2px, var(--_g)),
+    conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
+  background-size:
+    var(--s) var(--s),
+    calc(var(--s) / 5) calc(var(--s) / 5);
+  background-position: center;
 }
