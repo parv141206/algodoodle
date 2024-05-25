@@ -33,24 +33,6 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique,
-          ipsa molestias temporibus unde sapiente inventore ducimus nostrum amet
-          voluptatibus? Ea saepe labore, illum totam dicta praesentium delectus
-          eum aliquam doloremque? Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Placeat vitae a aliquam! Voluptatum, culpa minus
-          tempore, tenetur nisi iusto rerum non dolorum eum delectus eaque
-          veritatis nesciunt dolorem nemo amet! Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Architecto cumque aut amet consequuntur
-          maxime voluptates beatae inventore nesciunt ipsum explicabo quod
-          laboriosam error autem a magnam hic vitae vero voluptatem libero quos
-          enim commodi adipisci, soluta molestias! Eius explicabo recusandae
-          natus. Magni itaque quia asperiores dicta blanditiis pariatur, quam
-          tempore velit quo eos, necessitatibus molestiae fuga. Reiciendis
-          fugiat dolores repellat, officia eius omnis eveniet praesentium eaque
-          possimus vero perferendis laudantium repudiandae magnam maiores
-          sapiente, alias ratione nisi voluptatum rem? Natus rerum asperiores
-          repellat, eum quasi tempora quidem iste, iure aliquid optio officiis
-          sint necessitatibus fuga perferendis, minus eaque accusamus unde.
         </body>
       </ThemeContext.Provider>
     </html>

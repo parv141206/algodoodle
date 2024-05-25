@@ -2,6 +2,8 @@
 import React from "react";
 import { DoodleCard } from "../_components/DoodleCard";
 import Image from "next/image";
+import { PrimaryButton } from "../_components/PrimaryButton";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   return (
@@ -15,6 +17,13 @@ const Home: React.FC = () => {
             <div className="text-center text-xl md:text-start">
               Learn new algorithms in an interactive and fun way!
             </div>
+            <Link href="/algorithms">
+              <PrimaryButton
+                title="Get Started!"
+                accentColor="bg-blue-200 dark:bg-blue-700"
+                class=""
+              />
+            </Link>
             {/* <DoodleCard
             class="w-fit text-balance text-center md:w-1/2 md:text-start"
             title="Welcome!"
