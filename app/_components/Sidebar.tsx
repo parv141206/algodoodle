@@ -12,12 +12,21 @@ const Sidebar = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
   useEffect(() => {
+    if (localStorage.getItem("directoryStructure") !== null) {
+      setDirectoryStructure(
+        JSON.parse(localStorage.getItem("directoryStructure")!),
+      );
+      setIsLoading(false);
+      return;
+    }
+    console.log("Fetching directory structure...");
     fetch("/api/directory")
       .then((response) => response.json())
       .then((data) => {
         setDirectoryStructure(data);
         setIsLoading(false);
         console.log(data);
+        localStorage.setItem("directoryStructure", JSON.stringify(data));
       })
       .catch((error) =>
         console.error("Error fetching directory structure:", error),
@@ -62,7 +71,7 @@ const Sidebar = () => {
   );
 
   return (
-    <aside className="flex w-full flex-col gap-1 rounded-lg p-3 shadow-lg dark:bg-gray-900 md:w-fit">
+    <aside className="sticky top-16 z-30 flex w-full flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:w-fit md:rounded-lg">
       <div className="flex justify-between">
         <div className="text-xl font-bold">Algorithms</div>
         <button
@@ -76,7 +85,7 @@ const Sidebar = () => {
       </div>
 
       <div
-        className={`transition-all md:block ${isExpanded ? "max-h-40 opacity-100 md:max-h-max md:opacity-100" : "max-h-0 opacity-0 md:max-h-max md:opacity-100"}`}
+        className={`transition-all md:block ${isExpanded ? "max-h-40 opacity-100 md:max-h-max md:opacity-100" : "hidden max-h-0 opacity-0 md:max-h-max md:opacity-100"}`}
       >
         {isLoading ? (
           <div className="m-3 flex items-center justify-center">
