@@ -1,6 +1,12 @@
 "use client";
+import Algorithm from "@/app/_components/AlgorithmStructure/Algorithm";
+import AlgorithmCodeBlock from "@/app/_components/AlgorithmStructure/AlgorithmCodeBlock";
+import AlgorithmInfo from "@/app/_components/AlgorithmStructure/AlgorithmInfo";
+import AlgorithmSteps from "@/app/_components/AlgorithmStructure/AlgorithmSteps";
+import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWorking";
 import { DoodleCard } from "@/app/_components/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
+import { PrimaryButton } from "@/app/_components/PrimaryButton";
 import { FC, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -44,9 +50,8 @@ const Page: FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="text-3xl font-bold">Binary Search</div>
-      <ul className="list-inside list-disc">
+    <Algorithm>
+      <AlgorithmInfo title="Binary Search">
         <li>
           Binary Search is a searching algorithm used in computer science to
           find the position of a target value within a sorted array.
@@ -72,69 +77,65 @@ const Page: FC = () => {
           The algorithm continues until the target value is found or the search
           range is empty.
         </li>
-      </ul>
-      <DoodleCard
-        title="Stats!"
-        description={
-          "Time Complexity: O(log n) <br/> Space Complexity: O(1) <br> "
-        }
-        accentColor="bg-blue-400"
-        class=""
-      />
-      <br />
-      <div className="text-3xl font-bold">Working</div>
-      <br />
-      <DoodleCard
-        title="Current Step Values"
-        accentColor="bg-emerald-400"
-        description={`High: ${high} | Low: ${low} | Pointer: ${Math.floor(
-          (low + high) / 2,
-        )} | Step: ${step} <br/> Formula: floor (
-          ( ${low} + ${high} ) / 2
-        )`}
-        class=""
-      />
-      <DoodleArray
-        arr={arr}
-        pointer_1={Math.floor((low + high) / 2)}
-        pointer_2={pointer2}
-        direction={isPhone ? "column" : "row"}
-        highlight_1={low}
-        highlight_2={high}
-      />
-      <p className="flex items-center gap-3">
-        {targetFound ? (
-          <p className="font-bold ">Target found at index {pointer2}</p>
-        ) : (
-          <>
-            <button
-              onClick={handleNext}
-              className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-            >
-              Next
-            </button>
-          </>
-        )}
-        <button
-          onClick={() => {
-            setArr([1, 2, 3, 4, 5, 6, 7]);
-            setStep(0);
-            setLow(0);
-            setHigh(arr.length - 1);
-            setPointer1(Math.floor((0 + (arr.length - 1)) / 2));
-            setPointer2(99);
-            setTarget(5);
-            setTargetFound(false);
-          }}
-          className="rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
-        >
-          Reset
-        </button>
-      </p>
-      <br />
-      <div className="text-3xl font-bold">Steps to solve it yourself!</div>
-      <br />
-      <ol className="list-inside list-decimal">
+        <br />
+        <DoodleCard
+          title="Stats!"
+          description={
+            "Time Complexity: O(log n) <br/> Space Complexity: O(1) <br> "
+          }
+          accentColor="bg-blue-400"
+          class=""
+        />
+      </AlgorithmInfo>
+      <AlgorithmWorking>
+        <DoodleCard
+          title="Current Step Values"
+          accentColor="bg-emerald-400"
+          description={`High: ${high} | Low: ${low} | Pointer: ${Math.floor(
+            (low + high) / 2,
+          )} | Step: ${step} <br/>  ${targetFound ? " Target found" : target < arr[Math.floor((low + high) / 2)] ? target + " < " + arr[Math.floor((low + high) / 2)] + " so we move to the left half" : target + " > " + arr[Math.floor((low + high) / 2)] + " so we move to the right half"}  <br/>`}
+          class=""
+        />
+        <DoodleArray
+          arr={arr}
+          pointer_1={Math.floor((low + high) / 2)}
+          pointer_2={pointer2}
+          direction={isPhone ? "column" : "row"}
+          highlight_1={low}
+          highlight_2={high}
+        />
+        <p className="flex items-center gap-3">
+          {targetFound ? (
+            <p className="font-bold ">Target found at index {pointer2}</p>
+          ) : (
+            <>
+              <button onClick={handleNext} className="">
+                <PrimaryButton
+                  accentColor="bg-blue-200"
+                  class=""
+                  title="Next"
+                />
+              </button>
+            </>
+          )}
+          <button
+            onClick={() => {
+              setArr([1, 2, 3, 4, 5, 6, 7]);
+              setStep(0);
+              setLow(0);
+              setHigh(arr.length - 1);
+              setPointer1(Math.floor((0 + (arr.length - 1)) / 2));
+              setPointer2(99);
+              setTarget(5);
+              setTargetFound(false);
+            }}
+            className=""
+          >
+            <PrimaryButton accentColor="bg-red-200" class="" title="Reset" />
+          </button>
+        </p>
+      </AlgorithmWorking>
+      <AlgorithmSteps>
         <li>Start with the middle element of the array.</li>
         <li>
           If the target value is equal to the middle element, then the search is
@@ -152,8 +153,9 @@ const Page: FC = () => {
           Repeat steps 2-4 until the target value is found or the search range
           is empty.
         </li>
-      </ol>
-    </div>
+      </AlgorithmSteps>
+      <AlgorithmCodeBlock algorithmName="binarysearch" />
+    </Algorithm>
   );
 };
 

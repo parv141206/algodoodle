@@ -18,19 +18,20 @@ const Sidebar = () => {
       );
       setIsLoading(false);
       return;
+    } else {
+      fetch("/api/directory")
+        .then((response) => response.json())
+        .then((data) => {
+          setDirectoryStructure(data);
+          setIsLoading(false);
+          console.log(data);
+          localStorage.setItem("directoryStructure", JSON.stringify(data));
+        })
+        .catch((error) =>
+          console.error("Error fetching directory structure:", error),
+        );
     }
     console.log("Fetching directory structure...");
-    fetch("/api/directory")
-      .then((response) => response.json())
-      .then((data) => {
-        setDirectoryStructure(data);
-        setIsLoading(false);
-        console.log(data);
-        localStorage.setItem("directoryStructure", JSON.stringify(data));
-      })
-      .catch((error) =>
-        console.error("Error fetching directory structure:", error),
-      );
   }, []); // Empty dependency array ensures this effect runs only once, on mount
 
   const capitalizeFirstLetter = (string: string) => {
@@ -71,7 +72,7 @@ const Sidebar = () => {
   );
 
   return (
-    <aside className="sticky top-16 z-30 flex w-full flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:w-fit md:rounded-lg">
+    <aside className="sticky top-16 z-30 flex h-fit w-full flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:w-fit md:rounded-lg ">
       <div className="flex justify-between">
         <div className="text-xl font-bold">Algorithms</div>
         <button

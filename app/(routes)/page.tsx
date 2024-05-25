@@ -20,7 +20,7 @@ const Home: React.FC = () => {
             <Link href="/algorithms">
               <PrimaryButton
                 title="Get Started!"
-                accentColor="bg-blue-200 dark:bg-blue-700"
+                accentColor="bg-blue-200 "
                 class=""
               />
             </Link>

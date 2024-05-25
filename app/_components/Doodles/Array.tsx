@@ -29,7 +29,7 @@ const DoodleArray: FC<Props> = ({
       {arr.map((num, index) => (
         <div
           key={index}
-          className={` ${index === highlight_1 ? "bg-red-300 dark:bg-red-800" : "bg-yellow-300 dark:bg-gray-700"} ${index === highlight_2 ? "bg-blue-300 dark:bg-blue-800" : ""} relative flex h-20 w-20 items-center justify-center ${
+          className={` ${index === highlight_1 ? "bg-red-300 dark:bg-red-800" : index === highlight_2 ? "bg-blue-300 dark:bg-blue-800" : "bg-yellow-300 dark:bg-gray-700"} ${index === highlight_2 ? "bg-blue-300 dark:bg-blue-800" : ""} relative flex h-20 w-20 items-center justify-center ${
             isRow
               ? index !== arr.length - 1
                 ? "border-r-2 border-black"
