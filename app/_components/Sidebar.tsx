@@ -5,6 +5,7 @@ import { DirectoryStructure } from "../lib/getDirectoryStructure";
 import { FaSpinner } from "react-icons/fa";
 import Link from "next/link";
 import { RiMenu3Fill } from "react-icons/ri";
+import Breadcrumbs from "./Breadcrumbs";
 
 const Sidebar = ({
   directoryStructure,
@@ -55,7 +56,7 @@ const Sidebar = ({
   return (
     <aside className="sticky top-16 z-30 flex h-fit w-full flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:w-fit md:rounded-lg ">
       <div className="flex justify-between">
-        <div className="text-xl font-bold">Algorithms</div>
+        <Breadcrumbs />
         <button
           onClick={() => {
             setIsExpanded(!isExpanded);
