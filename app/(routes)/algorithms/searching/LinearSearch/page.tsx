@@ -20,7 +20,7 @@ const Page: FC = () => {
   const [targetFound, setTargetFound] = useState(false);
   const [code, setCode] = useState<string>("");
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
-
+  
   useEffect(() => {
     const fetchCode = async () => {
       try {

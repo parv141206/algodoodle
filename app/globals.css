@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --s: 25rem; /* control the size*/
+  --s: 25rem;
   --c1: #7a7a7a11;
   --c2: #79797900;
 
   --_g: #0000 90deg, var(--c1) 0;
+}
+body {
+  scroll-behavior: smooth;
 }
 .bg-pattern {
   background: conic-gradient(from 90deg at 2px 2px, var(--_g)),

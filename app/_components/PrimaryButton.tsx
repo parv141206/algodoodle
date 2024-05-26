@@ -12,7 +12,7 @@ export const PrimaryButton: FC<PrimaryButtonProps> = ({
   class: className,
 }) => {
   return (
-    <button>
+    <div>
       <div
         className={` ${className} group relative flex  flex-col gap-1 rounded-md border dark:border-gray-700 ${accentColor}  p-3 transition-all dark:bg-opacity-25  `}
       >
@@ -21,6 +21,6 @@ export const PrimaryButton: FC<PrimaryButtonProps> = ({
           className={` absolute left-2 top-2 z-[-1] h-full w-full rounded-md bg-gray-200 transition-all group-hover:left-1 group-hover:top-1 group-active:left-0 group-active:top-0 dark:bg-gray-700   dark:bg-opacity-25`}
         ></div>
       </div>
-    </button>
+    </div>
   );
 };

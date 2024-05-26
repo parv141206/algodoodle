@@ -1,38 +1,19 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { DirectoryStructure } from "../lib/getDirectoryStructure";
 import { FaSpinner } from "react-icons/fa";
 import Link from "next/link";
 import { RiMenu3Fill } from "react-icons/ri";
 
-const Sidebar = () => {
-  const [directoryStructure, setDirectoryStructure] =
-    useState<DirectoryStructure>([]);
-  const [isLoading, setIsLoading] = useState(true);
+const Sidebar = ({
+  directoryStructure,
+  isLoading,
+}: {
+  directoryStructure: DirectoryStructure;
+  isLoading: boolean;
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  useEffect(() => {
-    if (localStorage.getItem("directoryStructure") !== null) {
-      setDirectoryStructure(
-        JSON.parse(localStorage.getItem("directoryStructure")!),
-      );
-      setIsLoading(false);
-      return;
-    } else {
-      fetch("/api/directory")
-        .then((response) => response.json())
-        .then((data) => {
-          setDirectoryStructure(data);
-          setIsLoading(false);
-          console.log(data);
-          localStorage.setItem("directoryStructure", JSON.stringify(data));
-        })
-        .catch((error) =>
-          console.error("Error fetching directory structure:", error),
-        );
-    }
-    console.log("Fetching directory structure...");
-  }, []); // Empty dependency array ensures this effect runs only once, on mount
 
   const capitalizeFirstLetter = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -86,7 +67,11 @@ const Sidebar = () => {
       </div>
 
       <div
-        className={`transition-all md:block ${isExpanded ? "max-h-40 opacity-100 md:max-h-max md:opacity-100" : "hidden max-h-0 opacity-0 md:max-h-max md:opacity-100"}`}
+        className={`transition-all md:block ${
+          isExpanded
+            ? "max-h-max opacity-100 md:max-h-max md:opacity-100"
+            : "hidden max-h-0 opacity-0 md:max-h-max md:opacity-100"
+        }`}
       >
         {isLoading ? (
           <div className="m-3 flex items-center justify-center">

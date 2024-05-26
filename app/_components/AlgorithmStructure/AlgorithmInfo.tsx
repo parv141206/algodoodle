@@ -8,6 +8,7 @@ interface Props {
 const AlgorithmInfo: FC<Props> = ({ title, children }) => {
   return (
     <>
+      <div id="info"></div>
       <div className="text-3xl font-bold">{title}</div>
       <ul className="list-inside list-disc">{children}</ul>
     </>

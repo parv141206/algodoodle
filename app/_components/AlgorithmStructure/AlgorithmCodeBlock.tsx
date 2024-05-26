@@ -29,6 +29,7 @@ const AlgorithmCodeBlock: FC<Props> = ({ algorithmName }) => {
   }, [algorithmName]);
   return (
     <>
+      <div id="code"></div>
       <div className="text-3xl font-bold">Code</div>
       <br />
       {isLoading ? (
