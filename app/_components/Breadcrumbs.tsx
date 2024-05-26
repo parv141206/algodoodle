@@ -4,10 +4,22 @@ const Breadcrumbs: FC = () => {
   const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
 
   useEffect(() => {
-    // Split the current URL path and remove empty strings
-    const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    setBreadcrumbs(pathSegments);
-  }, []);
+    const updateBreadcrumbs = () => {
+      const pathSegments = window.location.pathname.split("/").filter(Boolean);
+      setBreadcrumbs(pathSegments);
+    };
+
+    updateBreadcrumbs();
+
+    const handlePopState = () => {
+      updateBreadcrumbs();
+    };
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [window.location.pathname]);
 
   return (
     <div className="flex text-xl font-bold">
