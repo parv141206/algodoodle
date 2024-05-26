@@ -1,16 +1,21 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 
 const Breadcrumbs: FC = () => {
-  // Split the current URL path and remove empty strings
-  const pathSegments = window.location.pathname.split("/").filter(Boolean);
+  const [breadcrumbs, setBreadcrumbs] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Split the current URL path and remove empty strings
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    setBreadcrumbs(pathSegments);
+  }, []);
 
   return (
     <div className="flex text-xl font-bold">
       <div className="md:hidden">
-        {pathSegments.map((segment, index) => (
+        {breadcrumbs.map((segment, index) => (
           <span key={index}>
             {index > 0 && " / "}
-            <a href={`/${pathSegments.slice(0, index + 1).join("/")}`}>
+            <a href={`/${breadcrumbs.slice(0, index + 1).join("/")}`}>
               {segment}
             </a>
           </span>
