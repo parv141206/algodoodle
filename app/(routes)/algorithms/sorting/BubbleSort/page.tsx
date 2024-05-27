@@ -7,15 +7,20 @@ import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWork
 import { DoodleCard } from "@/app/_components/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
-import { FC, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import ArrayInputContext from "@/app/_contexts/ArrayInput";
 
 const Page: FC = () => {
-  const [arr, setArr] = useState([4, 2, 6, 3, 1, 9]);
+  const arrayInput = useContext(ArrayInputContext);
+  const [arr, setArr] = useState(arrayInput?.arrayInput || [4, 2, 6, 3, 1, 9]);
   const [i, setI] = useState(0);
   const [j, setJ] = useState(0);
   const [message, setMessage] = useState("");
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
+  useEffect(() => {
+    setArr(arrayInput?.arrayInput || [4, 2, 6, 3, 1, 9]);
+  }, [arrayInput]);
 
   const handleNext = () => {
     // Check if the array is already sorted
@@ -106,7 +111,7 @@ const Page: FC = () => {
 
             <button
               onClick={() => {
-                setArr([4, 2, 6, 3, 1, 9]);
+                setArr(arrayInput?.arrayInput || [4, 2, 6, 3, 1, 9]);
                 setI(0);
                 setJ(0);
                 setMessage("");

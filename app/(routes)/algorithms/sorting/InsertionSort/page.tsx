@@ -7,11 +7,13 @@ import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWork
 import { DoodleCard } from "@/app/_components/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
-import { FC, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
+import ArrayInputContext from "@/app/_contexts/ArrayInput";
+import { FC, useContext, useState } from "react";
 const Page: FC = () => {
-  const [arr, setArr] = useState([4, 2, 6, 3, 1, 9]);
+  const arrayInput = useContext(ArrayInputContext);
+  const [arr, setArr] = useState(arrayInput?.arrayInput || [4, 2, 6, 3, 1, 9]);
   const [i, setI] = useState(1); // Start from the second element
   const [j, setJ] = useState(1);
   const [message, setMessage] = useState("");
@@ -48,9 +50,7 @@ const Page: FC = () => {
       <Algorithm>
         <AlgorithmInfo title="Insertion Sort">
           <ul>
-            <li>
-              🔄 Insertion Sort is like sorting a hand of playing cards.
-            </li>
+            <li>🔄 Insertion Sort is like sorting a hand of playing cards.</li>
             <li>
               🃏 Imagine you have a few cards in your hand, and you pick them
               one by one.
@@ -111,7 +111,7 @@ const Page: FC = () => {
 
             <button
               onClick={() => {
-                setArr([4, 2, 6, 3, 1, 9]);
+                setArr(arrayInput?.arrayInput || [4, 2, 6, 3, 1, 9]);
                 setI(1); // Reset to the second element
                 setJ(1);
                 setMessage("");
