@@ -4,14 +4,17 @@ import { DoodleCard } from "../_components/DoodleCard";
 import Image from "next/image";
 import { PrimaryButton } from "../_components/PrimaryButton";
 import Link from "next/link";
+import MockAlgorithmWorking from "../_components/MockAlgorithm/MockAlgorithmWorking";
+import MockAlgorithmInfo from "../_components/MockAlgorithm/MockAlgorithmInfo";
+import AlgorithmCodeBlock from "../_components/AlgorithmStructure/AlgorithmCodeBlock";
 
 const Home: React.FC = () => {
   return (
-    <main className="bg-pattern">
+    <main className="bg-pattern flex flex-col gap-5">
       <section className=" container mx-auto  flex min-h-[90vh] items-center justify-center    p-3 ">
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
           <div className="flex flex-col items-center justify-center gap-5">
-            <div className="text-center text-3xl font-extrabold md:text-start md:text-7xl ">
+            <div className="text-center text-3xl font-extrabold md:text-start md:text-8xl ">
               AlgoDoodle
             </div>
             <div className="text-center text-xl md:text-start">
@@ -55,6 +58,38 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="container mx-auto flex flex-col items-center justify-center text-center md:flex-row md:text-start">
+        <div className="flex flex-col gap-3 p-3 md:w-1/2">
+          <div className="text-3xl font-bold md:text-7xl">
+            You can control everything!
+          </div>
+          <p className="text-xl">
+            The working of each algorithm is interactable!
+          </p>
+          <p className="text-xl">
+            You can also add your own array and see how it works!
+          </p>
+        </div>
+        <div className="md:w-1/2">
+          <MockAlgorithmWorking />
+        </div>
+      </section>
+      <section className="container mx-auto flex flex-col items-center justify-center text-center md:w-4/5  md:text-start">
+        <div className="flex flex-col gap-3 p-5 ">
+          <div className="text-center text-3xl font-bold md:text-5xl">
+            Starting from bare bones, to implementing the algorithms yourself!
+          </div>
+        </div>
+        <MockAlgorithmInfo />
+      </section>
+      <section className="container mx-auto flex flex-col items-center justify-center text-center   md:text-start">
+        <div className="flex flex-col gap-3 p-5 ">
+          <div className="text-center text-3xl font-bold md:text-5xl">
+            The code too is ready to be used!
+          </div>
+        </div>
+        <AlgorithmCodeBlock algorithmName="selectionsort" />
       </section>
     </main>
   );
