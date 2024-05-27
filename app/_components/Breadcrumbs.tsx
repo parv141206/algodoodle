@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useEffect, useState } from "react";
 
 const Breadcrumbs: FC = () => {
@@ -5,8 +7,12 @@ const Breadcrumbs: FC = () => {
 
   useEffect(() => {
     const updateBreadcrumbs = () => {
-      const pathSegments = window.location.pathname.split("/").filter(Boolean);
-      setBreadcrumbs(pathSegments);
+      if (typeof window !== "undefined") {
+        const pathSegments = window.location.pathname
+          .split("/")
+          .filter(Boolean);
+        setBreadcrumbs(pathSegments);
+      }
     };
 
     updateBreadcrumbs();
@@ -14,12 +20,12 @@ const Breadcrumbs: FC = () => {
     const handlePopState = () => {
       updateBreadcrumbs();
     };
-    window.addEventListener("popstate", handlePopState);
 
+    window.addEventListener("popstate", handlePopState);
     return () => {
       window.removeEventListener("popstate", handlePopState);
     };
-  }, [window.location.pathname]);
+  }, []);
 
   return (
     <div className="flex text-xl font-bold">
