@@ -8,7 +8,7 @@ import Link from "next/link";
 const Home: React.FC = () => {
   return (
     <main className="bg-pattern">
-      <section className=" container mx-auto  flex min-h-[80vh] items-center justify-center    p-3 ">
+      <section className=" container mx-auto  flex min-h-[90vh] items-center justify-center    p-3 ">
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
           <div className="flex flex-col items-center justify-center gap-5">
             <div className="text-center text-3xl font-extrabold md:text-start md:text-7xl ">
@@ -50,6 +50,9 @@ const Home: React.FC = () => {
               description="O(n), O(n^2), O(log n), what is it?"
               accentColor="bg-red-300"
             />
+            <div className="p-3 text-center text-xl md:text-start">
+              All your questioned answered at one place!
+            </div>
           </div>
         </div>
       </section>

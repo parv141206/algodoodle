@@ -45,7 +45,7 @@ export default function Layout({
         title={` Hey! You can insert your own array!`}
         className=""
       >
-        <>
+        <div className="flex  gap-3">
           <input
             className="input"
             type="text"
@@ -60,7 +60,7 @@ export default function Layout({
               title="Submit"
             ></PrimaryButton>
           </button>
-        </>
+        </div>
       </DoodleInfoCard>
       <br />
       {children}
