@@ -11,7 +11,7 @@ const MockAlgorithmInfo: FC = () => {
     <div>
       <MacWindowMockup>
         <Algorithm>
-          <div className="flex gap-10 p-5">
+          <div className="flex flex-col gap-10 p-5 md:flex-row">
             <div>
               <AlgorithmInfo title="Insertion Sort">
                 <ul>

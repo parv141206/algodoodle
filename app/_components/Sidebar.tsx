@@ -56,7 +56,7 @@ const Sidebar = ({
   return (
     <aside className="sticky top-16 z-30 flex h-fit w-full flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:w-fit md:rounded-lg ">
       <div className="flex justify-between">
-        <Breadcrumbs />
+        <div className="text-xl font-bold">Algorithms</div>
         <button
           onClick={() => {
             setIsExpanded(!isExpanded);

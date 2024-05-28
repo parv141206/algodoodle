@@ -30,9 +30,9 @@ export default function RootLayout({
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <ArrayInputContext.Provider value={{ arrayInput, setArrayInput }}>
           <body
-            className={`${inter.className} min-h-screen  transition-all dark:bg-gray-950 dark:text-gray-200`}
+            className={`${inter.className} min-h-screen  overflow-x-hidden transition-all dark:bg-gray-950 dark:text-gray-200`}
           >
-            <div className="bg-main-bg dark:bg-main-bg-dark min-h-screen">
+            <div className="min-h-screen bg-main-bg dark:bg-main-bg-dark">
               <Navbar />
               {children}
             </div>

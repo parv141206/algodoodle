@@ -83,16 +83,16 @@ const Home: React.FC = () => {
         </div>
         <MockAlgorithmInfo />
       </section>
-      <section className="container mx-auto flex flex-col items-center justify-center text-center   md:text-start">
-        <div className="flex flex-col gap-3 p-5 ">
+      <section className="container mx-auto flex items-center justify-center md:w-4/5">
+        <div className="flex flex-col items-center justify-center gap-3 p-5">
           <div className="text-center text-3xl font-bold md:text-5xl">
-            The code too is ready to be used!
+            We also provide code which is ready to be used!
           </div>
         </div>
-        <div>
-          <AlgorithmCodeBlock algorithmName="selectionsort" />
-        </div>
       </section>
+      <div className="container mx-auto p-5">
+        <AlgorithmCodeBlock algorithmName="selectionsort" />
+      </div>
       <section className="container mx-auto flex flex-col items-center justify-center gap-7 p-5">
         <div className="text-center text-3xl font-bold md:text-5xl">
           So what are you waiting for?
