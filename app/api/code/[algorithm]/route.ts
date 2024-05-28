@@ -30,7 +30,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const filePath = path.join("images", "code"); // Adjusted to match your project structure
+  const filePath = path.join("assets", "code"); // Adjusted to match your project structure
   console.log(filePath);
   try {
     const code = await getCodeFile(filePath, `${algorithm}.c`);
