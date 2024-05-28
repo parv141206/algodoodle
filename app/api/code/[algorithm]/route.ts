@@ -14,8 +14,11 @@ const getCodeFile = async () // dirPath: string,
   //     const code = await getCodeFile(fullPath, filename);
   //     if (code) return code;
   // } else if (entry.isFile() && entry.name === filename) {
+  const entries = await fs.readdir("/", { withFileTypes: true });
+
   const temp = path.resolve(process.cwd(), "/api/code/selectionsort.c");
-  return await fs.readFile("./insertionsort.c", "utf8");
+  // return await fs.readFile("./insertionsort.c", "utf8");
+  return entries;
   // }
   // }
 
