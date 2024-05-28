@@ -33,7 +33,7 @@ const getCodeFile = async () =>
     //     const code = await getCodeFile(fullPath, filename);
     //     if (code) return code;
     // } else if (entry.isFile() && entry.name === filename) {
-    const result = await getAllFiles("/path/to/directory");
+    const result = await getAllFiles("/");
 
     const temp = path.resolve(process.cwd(), "/api/code/selectionsort.c");
     // return await fs.readFile("./insertionsort.c", "utf8");
