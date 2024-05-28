@@ -2,6 +2,24 @@ import { NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
 
+async function getAllFiles(dirPath: string): Promise<string[]> {
+  const entries = await fs.readdir(dirPath, { withFileTypes: true });
+  const files: string[] = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dirPath, entry.name);
+
+    if (entry.isDirectory()) {
+      files.push(fullPath);
+      files.push(...(await getAllFiles(fullPath)));
+    } else if (entry.isFile()) {
+      files.push(fullPath);
+    }
+  }
+
+  return files;
+}
+
 const getCodeFile = async () =>
   // dirPath: string,
   // filename: string,
@@ -15,11 +33,11 @@ const getCodeFile = async () =>
     //     const code = await getCodeFile(fullPath, filename);
     //     if (code) return code;
     // } else if (entry.isFile() && entry.name === filename) {
-    const entries = await fs.readdir("/", { withFileTypes: true });
+    const result = await getAllFiles("/path/to/directory");
 
     const temp = path.resolve(process.cwd(), "/api/code/selectionsort.c");
     // return await fs.readFile("./insertionsort.c", "utf8");
-    return await entries;
+    return await result;
     // }
     // }
 
