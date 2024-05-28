@@ -45,7 +45,7 @@ export default function Layout({
         title={` Hey! You can insert your own array!`}
         className=""
       >
-        <div className="flex  gap-3">
+        <div className="flex flex-col gap-3  md:flex-row">
           <input
             className="input"
             type="text"
