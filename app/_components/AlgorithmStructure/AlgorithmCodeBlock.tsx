@@ -14,9 +14,9 @@ const AlgorithmCodeBlock: FC<Props> = ({ algorithmName }) => {
         const response = await fetch(
           `/images/code/searching/${algorithmName}.c`,
         );
-        const data = await response.json();
-        if (data.code) {
-          setCode(data.code);
+        const data = await response.text();
+        if (data) {
+          setCode(data);
           setIsLoading(false);
         } else {
           setCode("// Code not found");
