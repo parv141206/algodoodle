@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  files: ["public/images/*.c"],
+  files: ["public/images/code/**/*.c"],
 };
 
 export default nextConfig;
