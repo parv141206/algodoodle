@@ -7,7 +7,7 @@ const getCodeFile = async (
   filename: string,
 ): Promise<string | null> => {
   const entries = await fs.readdir(dirPath, { withFileTypes: true });
-
+  console.log(entries);
   for (const entry of entries) {
     const fullPath = path.join(dirPath, entry.name);
 
