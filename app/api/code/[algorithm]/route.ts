@@ -28,7 +28,9 @@ export async function GET(req: Request) {
   if (!algorithm) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
-  const filePath = path.resolve("public", "code"); // Use path.resolve for correct path resolution
+  console.log(process.cwd())
+  return NextResponse.json({"cwd": process.cwd()})
+  const filePath = path.resolve(process.cwd(), "code"); // Use path.resolve for correct path resolution
   console.log(filePath);
   try {
     const code = await getCodeFile(filePath, `${algorithm}.c`);
