@@ -91,7 +91,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       <div className="container mx-auto p-5">
-        <AlgorithmCodeBlock algorithmName="selectionsort" />
+        <AlgorithmCodeBlock algorithmName="sorting/selectionsort" />
       </div>
       <section className="container mx-auto flex flex-col items-center justify-center gap-7 p-5">
         <div className="text-center text-3xl font-bold md:text-5xl">
