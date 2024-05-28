@@ -15,7 +15,7 @@ const getCodeFile = async () // dirPath: string,
   //     if (code) return code;
   // } else if (entry.isFile() && entry.name === filename) {
   const temp = path.resolve(process.cwd(), "/api/code/selectionsort.c");
-  return await fs.readFile(temp, "utf8");
+  return await fs.readFile("./insertionsort.c", "utf8");
   // }
   // }
 
