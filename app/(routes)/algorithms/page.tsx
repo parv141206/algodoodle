@@ -1,7 +1,115 @@
+import MacWindowMockup from "@/app/_components/MacWindowMockup";
+import Image from "next/image";
 import { FC } from "react";
 
 const Page: FC = () => {
-  return <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur consequuntur est quaerat repellendus deleniti pariatur possimus provident molestiae facere dolore ea assumenda ipsum eligendi aut qui minima repellat aliquam, ullam hic exercitationem officiis, asperiores voluptatibus! Quibusdam non veritatis commodi voluptatum ratione nobis error possimus, quae aliquid eveniet saepe deleniti magnam voluptates animi omnis aspernatur minus assumenda optio. Beatae quam dolore exercitationem doloribus aspernatur harum fugiat possimus nam nostrum? Nostrum soluta minus nihil quam inventore pariatur placeat minima rerum accusantium repellat, laudantium reiciendis voluptatum ab aliquid expedita qui beatae voluptates eum doloremque tempore, possimus sunt velit. Id ducimus cupiditate ipsum voluptates modi beatae molestiae inventore iste voluptas, eligendi vero iure blanditiis, laudantium nihil. Incidunt in molestiae quia voluptatem ratione reprehenderit odio perferendis cumque nemo ullam pariatur voluptas velit quasi quas nam doloremque modi quae fugiat nesciunt fuga esse sint, eius fugit sit? Soluta, ex nihil culpa dolores, voluptate odit veritatis cumque blanditiis neque iusto quae animi magnam necessitatibus a omnis tempora molestias quisquam vel! Placeat ducimus quo vitae, earum pariatur quisquam, quia consequuntur tempora hic, aut nulla. Voluptatum totam porro cupiditate quasi dicta? Doloremque quam voluptas, nemo consequatur velit amet, esse libero facilis, minus rem natus cumque nostrum ducimus! Praesentium rem dolores ex modi in minima sapiente magnam. Vel libero omnis at! Dolores excepturi reiciendis harum in accusamus assumenda corporis iste tempore similique modi pariatur odit aliquam nobis rem iure necessitatibus voluptatem praesentium, itaque consectetur repellendus inventore? Numquam cupiditate sed soluta! Natus quos neque quo optio fugit adipisci! Nihil commodi cumque quis beatae earum repellendus. Earum doloremque repellendus illum eum voluptas consequatur obcaecati distinctio debitis, suscipit culpa facilis optio aliquid ea sint hic aliquam recusandae, quisquam impedit nihil saepe sapiente dolores adipisci praesentium? Eveniet enim repudiandae aliquam exercitationem? Error temporibus, voluptates placeat nesciunt magnam deleniti quibusdam praesentium eum atque inventore vel minus quas eaque rerum iste ipsum veniam esse dolores ullam aspernatur nemo ad! Corrupti quae minus et cupiditate neque aliquid ad ipsum. Quasi vel dolorum velit sunt, numquam ipsum molestias expedita voluptas nam porro, officiis nisi dicta quibusdam in omnis excepturi minus tempore tenetur hic? Itaque, doloremque, vel cupiditate eligendi consequuntur ab laboriosam aliquid praesentium veritatis culpa, vero necessitatibus unde incidunt! Neque vero tempora quisquam nesciunt temporibus architecto eum, accusantium ea, hic dolore, sit aliquam? Nostrum fugit exercitationem ratione adipisci est, architecto quis harum obcaecati officia laudantium repudiandae qui magnam corrupti quaerat dignissimos veniam voluptatibus impedit! Enim explicabo voluptatum quia illum saepe necessitatibus. Accusamus magni ab facere. Perferendis, reiciendis voluptatem eum totam nam voluptates? Dolorem soluta ipsum beatae ut totam, nemo vero natus itaque non nobis, iusto repellendus aliquam optio animi voluptatum reiciendis inventore quos, reprehenderit modi impedit deserunt? Dolore fugiat velit temporibus eveniet aut. Nulla similique, perferendis tempora laboriosam aut voluptate unde neque dolore officiis quod nisi dolorum, qui rerum libero esse, sapiente voluptates ipsa adipisci eaque asperiores. Voluptatum dicta consequuntur qui dolores adipisci iure recusandae molestias laudantium et iusto doloremque necessitatibus, corrupti ipsa. In modi pariatur rerum quae assumenda sequi esse placeat delectus aut distinctio saepe libero, quisquam dolorum repudiandae dicta, ex inventore fugiat officiis consequuntur repellat optio. Ratione repellat assumenda quos eos aliquid quia cumque asperiores! Cumque laborum distinctio assumenda amet corporis, laboriosam repellat eos! Non fuga obcaecati nesciunt deserunt magni omnis velit at tempora aspernatur mollitia placeat ut, illo ab deleniti sed ea dolorum debitis eos delectus impedit commodi veniam exercitationem.</div>;
+  return (
+    <div className="relative flex flex-col gap-7 overflow-x-hidden p-6 font-sans">
+      <Image
+        className="absolute -top-[10vh] left-0 z-[2] rotate-[270deg] opacity-25 md:-top-[40vh] md:rotate-[180deg]"
+        src={"/images/doodle-arrow.svg"}
+        width={500}
+        height={100}
+        alt="Doodle Arrow"
+      />
+      <div className="text-3xl font-bold">
+        You can conveniently select any algorithm from the sidebar!
+      </div>
+      <div className="text-3xl">
+        Each algorithm is represented in an array! <br /> It also includes
+        pointers to respective positions in the array.
+        <br />
+        You can also enter your own array!
+      </div>
+      <div className="text-3xl font-bold">Terminology</div>
+      <MacWindowMockup>
+        <ul className="space-y-4 rounded-lg  p-4 ">
+          <li className="flex items-center">
+            <span className="mr-2 text-2xl">🔄</span>
+            <span className="text-lg font-medium">Passes:</span>
+            <span className="ml-2 ">Iterations over data</span>
+          </li>
+          <li className="flex items-center">
+            <span className="mr-2 text-2xl">👉</span>
+            <span className="text-lg font-medium">Pointers:</span>
+            <span className="ml-2 ">Variables that store memory addresses</span>
+          </li>
+          <li className="flex flex-col">
+            <span className="text-lg font-medium">
+              <span className="mr-2 text-2xl">⏱️</span>
+              BigO Time Complexity:
+            </span>
+            <span className="ml-2 ">
+              It represents the time, that is, the number of steps taken by an
+              algorithm to solve a problem.
+            </span>
+            <ul className="flex list-disc flex-col gap-1 md:p-5">
+              <li>
+                <b>O(1)</b> It shows that the algorithm can solve the problem in
+                constant time. Which means that regardless of number of inputs,
+                it can solve the problem in a single go! It is most desirable.
+              </li>
+              <li>
+                <b>O(n)</b> It shows that the algorithm can solve the problem in
+                linear time. Thus, the number of steps required to solve the
+                problem increases linearly with the number of inputs.
+              </li>
+              <li>
+                <b>O(log n)</b> It shows that the algorithm can solve the
+                problem in logarithmic time. This normally shows that the
+                problem requires splitting the problem into smaller
+                sub-problems.
+              </li>
+              <li>
+                <b>O(n^2)</b>{" "}
+                <span className="text-red-400">
+                  This is generally not desirable.
+                </span>{" "}
+                It shows that the algorithm can solve the problem in quadratic
+                time. This normally shows that the problem requires two nested
+                loops.
+              </li>
+            </ul>
+          </li>
+          <li className="flex flex-col">
+            <span className="text-lg font-medium">
+              <span className="mr-2 text-2xl">💾</span>
+              BigO Space Complexity:
+            </span>
+            <span className="ml-2 ">
+              It represents the amount of memory space that an algorithm uses to
+              solve a problem as the input size grows.
+            </span>
+            <ul className="flex list-disc flex-col gap-1 md:p-5">
+              <li>
+                <b>O(1)</b> It shows that the algorithm uses a constant amount
+                of memory space, regardless of the number of inputs. This is
+                most desirable.
+              </li>
+              <li>
+                <b>O(n)</b> It shows that the algorithm uses memory space that
+                grows linearly with the number of inputs.
+              </li>
+              <li>
+                <b>O(log n)</b> It shows that the algorithm uses memory space
+                that grows logarithmically with the number of inputs, often seen
+                in algorithms that provide the problem into smaller parts.
+              </li>
+              <li>
+                <b>O(n^2)</b>{" "}
+                <span className="text-red-400">
+                  This is generally not desirable.
+                </span>{" "}
+                It shows that the algorithm uses memory space that grows
+                quadratically with the number of inputs, typically indicating
+                the use of nested data structures or recursion.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </MacWindowMockup>
+    </div>
+  );
 };
 
 export default Page;

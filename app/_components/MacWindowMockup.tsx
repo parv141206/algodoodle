@@ -4,7 +4,7 @@ interface Props {
 }
 const MacWindowMockup: FC<Props> = ({ children }) => {
   return (
-    <div className="flex flex-col  rounded-lg border bg-transparent  p-3 backdrop-blur-sm dark:bg-[#282a36]">
+    <div className="flex flex-col  rounded-lg border bg-transparent  p-3 backdrop-blur-sm  dark:border-gray-800">
       <div className="flex w-full flex-row items-center justify-between gap-1 p-5 ">
         <div className="flex gap-1">
           <div className="h-5 w-5 rounded-full bg-red-500"></div>

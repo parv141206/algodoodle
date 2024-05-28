@@ -89,7 +89,21 @@ const Home: React.FC = () => {
             The code too is ready to be used!
           </div>
         </div>
-        <AlgorithmCodeBlock algorithmName="selectionsort" />
+        <div>
+          <AlgorithmCodeBlock algorithmName="selectionsort" />
+        </div>
+      </section>
+      <section className="container mx-auto flex flex-col items-center justify-center gap-7 p-5">
+        <div className="text-center text-3xl font-bold md:text-5xl">
+          So what are you waiting for?
+        </div>
+        <Link href="/algorithms">
+          <PrimaryButton
+            title="Get Started for free!"
+            accentColor="bg-blue-200 "
+            class=""
+          />
+        </Link>
       </section>
     </main>
   );
