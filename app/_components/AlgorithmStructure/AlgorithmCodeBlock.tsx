@@ -11,9 +11,7 @@ const AlgorithmCodeBlock: FC<Props> = ({ algorithmName }) => {
   useEffect(() => {
     const fetchCode = async () => {
       try {
-        const response = await fetch(
-          `/images/code/searching/${algorithmName}.c`,
-        );
+        const response = await fetch(`/images/code/${algorithmName}.c`);
         const data = await response.text();
         if (data) {
           setCode(data);

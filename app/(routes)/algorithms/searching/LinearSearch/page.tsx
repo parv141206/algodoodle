@@ -20,7 +20,7 @@ const Page: FC = () => {
   const [targetFound, setTargetFound] = useState(false);
   const [code, setCode] = useState<string>("");
   const isPhone = useMediaQuery({ query: "(max-width: 767px)" });
-  
+
   useEffect(() => {
     const fetchCode = async () => {
       try {
@@ -137,7 +137,7 @@ const Page: FC = () => {
         <li>Else, increment the pointer.</li>
       </AlgorithmSteps>
       <div>
-        <AlgorithmCodeBlock algorithmName="linearsearch"></AlgorithmCodeBlock>
+        <AlgorithmCodeBlock algorithmName="searching/linearsearch"></AlgorithmCodeBlock>
       </div>
     </Algorithm>
   );

@@ -154,7 +154,7 @@ const Page: FC = () => {
           is empty.
         </li>
       </AlgorithmSteps>
-      <AlgorithmCodeBlock algorithmName="binarysearch" />
+      <AlgorithmCodeBlock algorithmName="searching/binarysearch" />
     </Algorithm>
   );
 };

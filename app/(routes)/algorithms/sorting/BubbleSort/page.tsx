@@ -216,7 +216,7 @@ const Page: FC = () => {
             </li>
           </ul>
         </AlgorithmSteps>
-        <AlgorithmCodeBlock algorithmName="bubblesort"></AlgorithmCodeBlock>
+        <AlgorithmCodeBlock algorithmName="sorting/bubblesort"></AlgorithmCodeBlock>
       </Algorithm>
     </div>
   );

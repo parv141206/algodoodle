@@ -184,7 +184,7 @@ const Page: FC = () => {
             </li>
           </ul>
         </AlgorithmSteps>
-        <AlgorithmCodeBlock algorithmName="selectionsort"></AlgorithmCodeBlock>
+        <AlgorithmCodeBlock algorithmName="sorting/selectionsort"></AlgorithmCodeBlock>
       </Algorithm>
     </div>
   );
