@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { DoodleCard } from "../_components/DoodleCard";
 import Image from "next/image";
 import { PrimaryButton } from "../_components/PrimaryButton";
@@ -9,14 +9,46 @@ import MockAlgorithmInfo from "../_components/MockAlgorithm/MockAlgorithmInfo";
 import AlgorithmCodeBlock from "../_components/AlgorithmStructure/AlgorithmCodeBlock";
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    function hackerlook(message: String, speed: number) {
+      let newMessage: Array<String> = [];
+      let abcd = "abcdefghijklmnopqrstuvwxyz";
+      let messageArray: Array<String> = message.split("");
+      let i = 0;
+      let j = 0;
+      const text: HTMLElement | null = document.getElementById("main-title");
+      function updateMessage() {
+        newMessage[i] = abcd.charAt(Math.floor(Math.random() * 26));
+        if (text) {
+          text.innerText = newMessage.join("");
+        }
+        j++;
+        if (j === 5) {
+          newMessage[i] = messageArray[i];
+          i++;
+          j = 0;
+        }
+        if (i === messageArray.length) {
+          clearInterval(interval);
+          if (text) {
+            text.innerText = newMessage.join("");
+          }
+        }
+      }
+
+      let interval = setInterval(updateMessage, speed);
+    }
+    hackerlook("AlgoDoodle", 50);
+  }, []);
   return (
     <main className="bg-pattern flex flex-col gap-5">
       <section className=" container mx-auto  flex min-h-[90vh] items-center justify-center    p-3 ">
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
           <div className="flex flex-col items-center justify-center gap-5">
-            <div className="text-center text-3xl font-extrabold md:text-start md:text-8xl ">
-              AlgoDoodle
-            </div>
+            <div
+              id="main-title"
+              className="text-center text-3xl font-extrabold md:text-start md:text-7xl "
+            ></div>
             <div className="text-center text-xl md:text-start">
               Learn new algorithms in an interactive and fun way!
             </div>

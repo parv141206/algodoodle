@@ -19,13 +19,13 @@ const Page: FC = () => {
   );
   const [index, setIndex] = useState(0);
 
-  const preorder = useMemo(() => {
+  const inorder = useMemo(() => {
     const result: TreeNode[] = [];
     const findPreorder = (tree: TreeNode) => {
-      result.push(tree);
       if (tree.left) {
         findPreorder(tree.left);
       }
+      result.push(tree);
       if (tree.right) {
         findPreorder(tree.right);
       }
@@ -45,16 +45,16 @@ const Page: FC = () => {
   return (
     <div>
       <Algorithm>
-        <AlgorithmInfo title="🚶‍♂️ Preorder Traversal :">
+        <AlgorithmInfo title="🚶‍♂️ Inorder Traversal :">
           <ul>
             <li>
-              🎯 Visit the <strong>root node</strong>.
+              🎯 Visit the <strong>left subtree</strong>.
             </li>
             <li>
-              🌿 Recursively traverse the <strong>left subtree</strong>.
+              🌿 Visit the <strong>current node</strong>.
             </li>
             <li>
-              🌱 Recursively traverse the <strong>right subtree</strong>.
+              🌱 Visit the <strong>right subtree</strong>.
             </li>
           </ul>
         </AlgorithmInfo>
@@ -62,7 +62,7 @@ const Page: FC = () => {
       <AlgorithmWorking>
         <DoodleCard
           title="Current values"
-          description={`Preorder: ${preorder
+          description={`Inorder: ${inorder
             .slice(0, index + 1)
             .map((node) => node.value)
             .join(", ")}`}
@@ -71,7 +71,7 @@ const Page: FC = () => {
         />
         <MemoizedDoodleTree
           root={tree}
-          highlight={preorder[index]}
+          highlight={inorder[index]}
           pointer={undefined}
         />
         <div className="flex gap-3">
@@ -97,22 +97,22 @@ const Page: FC = () => {
             yourself!
           </li>
           <MacWindowMockup>
-            <ul className="flex list-inside flex-col gap-5 p-3">
-              <li>PREORDER(root)</li>
-              <li>print(root)</li>
+            <ul className="flex list-inside flex-col gap-5  p-3">
+              <li>INORDER(root)</li>
               <li>
                 if(root.left)
-                <div className="px-3">PREORDER(root.left)</div>
+                <div className="px-3">INORDER(root.left)</div>
               </li>
+              <li>print(root)</li>
               <li>
                 if(root.right)
-                <div className="px-3">PREORDER(root.right)</div>
+                <div className="px-3">INORDER(root.right)</div>
               </li>
             </ul>
           </MacWindowMockup>
         </ul>
       </AlgorithmSteps>
-      <AlgorithmCodeBlock algorithmName="tree/preorder" />
+      <AlgorithmCodeBlock algorithmName="tree/inorder" />
     </div>
   );
 };
