@@ -32,7 +32,7 @@ const DoodleTree: FC<Props> = ({ root, pointer, highlight }) => {
     return (
       <div className="relative m-4 flex flex-col items-center justify-center">
         <div
-          className={`z-[25] flex h-10 w-10 items-center justify-center rounded-full p-4 md:h-16 md:w-16 ${
+          className={`z-[25] flex h-8 w-8 items-center justify-center rounded-full p-4 md:h-16 md:w-16 ${
             isHighlight
               ? "bg-blue-300 dark:bg-blue-800"
               : "bg-yellow-300 dark:bg-gray-700"
