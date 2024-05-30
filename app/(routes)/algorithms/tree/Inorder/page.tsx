@@ -12,8 +12,6 @@ import { tree, TreeNode } from "@/app/lib/tree";
 import { FC, memo, useEffect, useMemo, useState } from "react";
 
 const Page: FC = () => {
-  // Create the tree structure
-
   const [highlightNode, setHighlightNode] = useState<TreeNode | undefined>(
     tree,
   );
