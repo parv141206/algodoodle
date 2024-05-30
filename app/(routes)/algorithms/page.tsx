@@ -6,7 +6,7 @@ const Page: FC = () => {
   return (
     <div className="relative flex flex-col gap-7 overflow-x-hidden p-6 font-sans">
       <Image
-        className="absolute -top-[10vh] left-0 z-[2] rotate-[270deg] opacity-25 md:-top-[40vh] md:rotate-[180deg]"
+        className="absolute -top-[8vh] left-0 z-[2] rotate-[270deg] opacity-25 md:-top-[40vh] md:rotate-[180deg]"
         src={"/assets/doodle-arrow.svg"}
         width={500}
         height={100}
