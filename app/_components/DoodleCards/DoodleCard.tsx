@@ -2,14 +2,14 @@ import { FC } from "react";
 
 interface DoodleCardProps {
   title: string;
-  description: string;
+  children: JSX.Element;
   accentColor: string;
-  class: string; // Changed from `class` to `className` to avoid keyword conflict
+  class: string;
 }
 
 export const DoodleCard: FC<DoodleCardProps> = ({
   title,
-  description,
+  children,
   accentColor,
   class: className,
 }) => {
@@ -20,8 +20,7 @@ export const DoodleCard: FC<DoodleCardProps> = ({
       >
         <h1 className="text-xl font-bold">{title}</h1>
         <hr className=" dark:border-gray-700 " />
-        <p dangerouslySetInnerHTML={{ __html: description }}></p>{" "}
-        {/* Corrected usage */}
+        {children}
         <div
           className={` absolute left-0 top-0 z-[-1] h-full w-full rounded-md bg-white p-3  dark:bg-gray-800 `}
         ></div>

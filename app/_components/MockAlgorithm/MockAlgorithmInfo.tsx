@@ -2,7 +2,7 @@
 import Algorithm from "@/app/_components/AlgorithmStructure/Algorithm";
 import AlgorithmInfo from "@/app/_components/AlgorithmStructure/AlgorithmInfo";
 import AlgorithmSteps from "@/app/_components/AlgorithmStructure/AlgorithmSteps";
-import { DoodleCard } from "@/app/_components/DoodleCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
 
 import { FC } from "react";
 import MacWindowMockup from "../MacWindowMockup";
@@ -50,14 +50,13 @@ const MockAlgorithmInfo: FC = () => {
                 </ul>
 
                 <br />
-                <DoodleCard
-                  title="Stats!"
-                  description={
-                    "Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br> "
-                  }
-                  accentColor="bg-blue-400"
-                  class=""
-                />
+                <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
+                  <>
+                    {
+                      "Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br> "
+                    }
+                  </>
+                </DoodleCard>
               </AlgorithmInfo>
             </div>
             <div>

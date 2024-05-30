@@ -4,7 +4,7 @@ import AlgorithmCodeBlock from "@/app/_components/AlgorithmStructure/AlgorithmCo
 import AlgorithmInfo from "@/app/_components/AlgorithmStructure/AlgorithmInfo";
 import AlgorithmSteps from "@/app/_components/AlgorithmStructure/AlgorithmSteps";
 import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWorking";
-import { DoodleCard } from "@/app/_components/DoodleCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
 import DoodleTree from "@/app/_components/Doodles/Tree";
 import MacWindowMockup from "@/app/_components/MacWindowMockup";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
@@ -63,13 +63,14 @@ const Page: FC = () => {
       <AlgorithmWorking>
         <DoodleCard
           title="Current values"
-          description={`Postorder: ${postorder
-            .slice(0, index + 1)
-            .map((node) => node.value)
-            .join(", ")}`}
           accentColor="bg-blue-400"
           class="my-3"
-        />
+        >
+          <>{`Postorder: ${postorder
+            .slice(0, index + 1)
+            .map((node) => node.value)
+            .join(", ")}`}</>
+        </DoodleCard>
         <MemoizedDoodleTree
           root={tree}
           highlight={postorder[index]}

@@ -4,7 +4,7 @@ import AlgorithmCodeBlock from "@/app/_components/AlgorithmStructure/AlgorithmCo
 import AlgorithmInfo from "@/app/_components/AlgorithmStructure/AlgorithmInfo";
 import AlgorithmSteps from "@/app/_components/AlgorithmStructure/AlgorithmSteps";
 import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWorking";
-import { DoodleCard } from "@/app/_components/DoodleCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
 import { FC, useEffect, useState } from "react";
@@ -78,22 +78,18 @@ const Page: FC = () => {
           to use binary search if the list is sorted.
         </li>
         <br />
-        <DoodleCard
-          title="Stats!"
-          description={
-            "Time Complexity: O(n) <br/> Space Complexity: O(1) <br> "
-          }
-          accentColor="bg-blue-400"
-          class=""
-        />
+        <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
+          <>{"Time Complexity: O(n) <br/> Space Complexity: O(1) <br> "}</>
+        </DoodleCard>
       </AlgorithmInfo>
       <AlgorithmWorking>
         <DoodleCard
           title="Current Step Values"
           accentColor="bg-emerald-400"
-          description={`Pointer at address: ${pointer1} <br/> Target: ${target}`}
           class=""
-        />
+        >
+          <>{`Pointer at address: ${pointer1} <br/> Target: ${target}`}</>
+        </DoodleCard>
         <DoodleArray
           arr={arr}
           pointer_1={pointer1}

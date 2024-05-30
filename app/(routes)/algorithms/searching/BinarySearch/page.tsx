@@ -4,7 +4,7 @@ import AlgorithmCodeBlock from "@/app/_components/AlgorithmStructure/AlgorithmCo
 import AlgorithmInfo from "@/app/_components/AlgorithmStructure/AlgorithmInfo";
 import AlgorithmSteps from "@/app/_components/AlgorithmStructure/AlgorithmSteps";
 import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWorking";
-import { DoodleCard } from "@/app/_components/DoodleCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
 import { FC, useState } from "react";
@@ -78,24 +78,20 @@ const Page: FC = () => {
           range is empty.
         </li>
         <br />
-        <DoodleCard
-          title="Stats!"
-          description={
-            "Time Complexity: O(log n) <br/> Space Complexity: O(1) <br> "
-          }
-          accentColor="bg-blue-400"
-          class=""
-        />
+        <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
+          <>{"Time Complexity: O(log n) <br/> Space Complexity: O(1) <br> "}</>
+        </DoodleCard>
       </AlgorithmInfo>
       <AlgorithmWorking>
         <DoodleCard
           title="Current Step Values"
           accentColor="bg-emerald-400"
-          description={`High: ${high} | Low: ${low} | Pointer: ${Math.floor(
-            (low + high) / 2,
-          )} | Step: ${step} <br/>  ${targetFound ? " Target found" : target < arr[Math.floor((low + high) / 2)] ? target + " < " + arr[Math.floor((low + high) / 2)] + " so we move to the left half" : target + " > " + arr[Math.floor((low + high) / 2)] + " so we move to the right half"}  <br/>`}
           class=""
-        />
+        >
+          <>
+            {`High: ${high} | Low: ${low} | Pointer: ${Math.floor((low + high) / 2)} | Step: ${step} <br/>  ${targetFound ? " Target found" : target < arr[Math.floor((low + high) / 2)] ? target + " < " + arr[Math.floor((low + high) / 2)] + " so we move to the left half" : target + " > " + arr[Math.floor((low + high) / 2)] + " so we move to the right half"}  <br/>`}
+          </>
+        </DoodleCard>
         <DoodleArray
           arr={arr}
           pointer_1={Math.floor((low + high) / 2)}
@@ -103,6 +99,7 @@ const Page: FC = () => {
           direction={isPhone ? "column" : "row"}
           highlight_1={low}
           highlight_2={high}
+          
         />
         <p className="flex items-center gap-3">
           {targetFound ? (

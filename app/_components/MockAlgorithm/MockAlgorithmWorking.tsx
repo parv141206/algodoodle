@@ -1,7 +1,7 @@
 import React, { FC, useContext, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
-import { DoodleCard } from "@/app/_components/DoodleCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
 import Algorithm from "@/app/_components/AlgorithmStructure/Algorithm";
 import AlgorithmCodeBlock from "@/app/_components/AlgorithmStructure/AlgorithmCodeBlock";
@@ -64,10 +64,11 @@ const MockAlgorithmWorking: FC = () => {
             <div className="flex items-center justify-center">
               <DoodleCard
                 title="Current values"
-                description={`Number of passes: ${i}<br> Current index: ${j}<br>${message}`}
                 accentColor="bg-blue-400"
                 class=""
-              />
+              >
+                <>{`Number of passes: ${i}<br> Current index: ${j}<br>${message}`}</>
+              </DoodleCard>
               <DoodleArray
                 arr={arr}
                 direction={`column`}
