@@ -32,7 +32,7 @@ const DoodleTree: FC<Props> = ({ root, pointer, highlight }) => {
     return (
       <div className="relative m-4 flex flex-col items-center justify-center">
         <div
-          className={`z-[25] flex h-16 w-16 items-center justify-center rounded-full p-4 ${
+          className={`z-[25] flex h-10 w-10 items-center justify-center rounded-full p-4 md:h-16 md:w-16 ${
             isHighlight
               ? "bg-blue-300 dark:bg-blue-800"
               : "bg-yellow-300 dark:bg-gray-700"
@@ -48,13 +48,13 @@ const DoodleTree: FC<Props> = ({ root, pointer, highlight }) => {
         <div className="flex w-full justify-center">
           {node.left && (
             <div className="relative z-10 w-1/2">
-              <div className="absolute -top-5 right-5 -z-[0]    h-12 w-6 border-l-2 border-t-2 border-black"></div>
+              <div className="absolute -top-5 right-5 -z-[0]    h-12 w-6 border-l-2 border-t-2 border-black dark:border-white"></div>
               {renderNode(node.left, level + 1, true)}
             </div>
           )}
           {node.right && (
             <div className="relative z-10 w-1/2">
-              <div className="absolute -top-5 left-5 -z-[2]  h-12 w-6 border-r-2 border-t-2 border-black"></div>
+              <div className="absolute -top-5 left-5 -z-[2]  h-12 w-6 border-r-2 border-t-2 border-black dark:border-white"></div>
               {renderNode(node.right, level + 1, false)}
             </div>
           )}

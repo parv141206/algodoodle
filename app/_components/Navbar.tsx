@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const theme = useContext(ThemeContext);
   return (
-    <nav className=" sticky top-0 z-[100]  flex  flex-col justify-between gap-3 border-b  bg-white/50 p-3 dark:border-gray-700 dark:bg-gray-800/75  md:flex-row md:px-10   md:backdrop-blur-3xl ">
+    <nav className=" sticky top-0 z-[100]  flex  flex-col justify-between gap-3 border-b bg-white p-3 dark:border-gray-700 dark:bg-gray-800 md:flex-row md:bg-white/50  md:px-10 md:backdrop-blur-3xl   md:dark:bg-gray-800/75 ">
       <div className="flex items-center justify-between">
         <Link href={"/"} className="text-xl font-bold">
           AlgoDoodle
