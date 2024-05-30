@@ -13,6 +13,7 @@ interface Props {
   direction: "row" | "column";
   highlight_1: number;
   highlight_2: number;
+  className?: string; // Add a default value of undefined
 }
 
 const DoodleArray: FC<Props> = ({
@@ -22,10 +23,15 @@ const DoodleArray: FC<Props> = ({
   direction,
   highlight_1,
   highlight_2,
+  className = "", // Use the default value if not provided
 }) => {
   const isRow = direction === "row";
+  const isReverse = className.includes("flex-col-reverse");
+
   return (
-    <div className={`m-20 flex w-fit ${isRow ? "flex-row" : "flex-col"} `}>
+    <div
+      className={`m-20 flex w-fit ${isRow ? "flex-row" : isReverse ? "flex-col-reverse" : "flex-col"} ${className}`}
+    >
       {arr.map((num, index) => (
         <div
           key={index}

@@ -1,6 +1,6 @@
 "use client";
-import { DoodleCard } from "@/app/_components/DoodleCard";
-import { DoodleInfoCard } from "@/app/_components/DoodleInfoCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
+import { DoodleInfoCard } from "@/app/_components/DoodleCards/DoodleInfoCard";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
 import ArrayInputContext from "@/app/_contexts/ArrayInput";
 import React, { useContext, useState } from "react";

@@ -4,7 +4,7 @@ import AlgorithmCodeBlock from "@/app/_components/AlgorithmStructure/AlgorithmCo
 import AlgorithmInfo from "@/app/_components/AlgorithmStructure/AlgorithmInfo";
 import AlgorithmSteps from "@/app/_components/AlgorithmStructure/AlgorithmSteps";
 import AlgorithmWorking from "@/app/_components/AlgorithmStructure/AlgorithmWorking";
-import { DoodleCard } from "@/app/_components/DoodleCard";
+import { DoodleCard } from "@/app/_components/DoodleCards/DoodleCard";
 import DoodleArray from "@/app/_components/Doodles/Array";
 import { PrimaryButton } from "@/app/_components/PrimaryButton";
 import { useMediaQuery } from "react-responsive";
@@ -80,22 +80,14 @@ const Page: FC = () => {
           </ul>
 
           <br />
-          <DoodleCard
-            title="Stats!"
-            description={
-              "Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br> "
-            }
-            accentColor="bg-blue-400"
-            class=""
-          />
+          <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
+            <>{"Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br> "}</>
+          </DoodleCard>
         </AlgorithmInfo>
         <AlgorithmWorking>
-          <DoodleCard
-            title="Current values"
-            description={`Number of passes: ${i}<br> Current index: ${j}<br>${message}`}
-            accentColor="bg-blue-400"
-            class=""
-          />
+          <DoodleCard title="Current values" accentColor="bg-blue-400" class="">
+            <>{`Number of passes: ${i}<br> Current index: ${j}<br>${message}`}</>
+          </DoodleCard>
           <DoodleArray
             arr={arr}
             direction={`${isPhone ? "column" : "row"}`}
