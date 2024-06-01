@@ -7,8 +7,11 @@ import Link from "next/link";
 import MockAlgorithmWorking from "../_components/MockAlgorithm/MockAlgorithmWorking";
 import MockAlgorithmInfo from "../_components/MockAlgorithm/MockAlgorithmInfo";
 import AlgorithmCodeBlock from "../_components/AlgorithmStructure/AlgorithmCodeBlock";
+import Card from "../_components/DoodleCards/Card";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Home: React.FC = () => {
+  
   useEffect(() => {
     function hackerlook(message: String, speed: number) {
       let newMessage: Array<String> = [];
@@ -86,6 +89,79 @@ const Home: React.FC = () => {
               All your questioned answered at one place!
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="container mx-auto grid grid-cols-1 content-stretch items-stretch justify-center gap-5 p-5 align-middle  md:w-[80%] md:grid-cols-3">
+          <Card>
+            <div className="flex h-full flex-col">
+              <div className="text-xl">Searching</div>
+              <div className="text-md">
+                Learn about various searching algorithms, how they work and how
+                fast they work!
+              </div>
+              <Link
+                href="/algorithms/searching"
+                className="link mt-auto flex items-center gap-1"
+              >
+                Learn more <FaArrowRight />
+              </Link>
+            </div>
+          </Card>
+          <Card>
+            <div className="flex h-full flex-col">
+              <div className="text-xl">Sorting</div>
+              <div className="text-md">
+                Sort elements like a pro with various sorting algorithms!
+              </div>
+              <Link
+                href="/algorithms/sorting"
+                className="link mt-auto flex items-center gap-1"
+              >
+                Learn more <FaArrowRight />
+              </Link>
+            </div>
+          </Card>
+          <Card>
+            <div className="flex h-full flex-col">
+              <div className="text-xl">Stack</div>
+              <div className="text-md">
+                Explore stack data structure and its operations!
+              </div>
+              <Link
+                href="/algorithms/stack"
+                className="link mt-auto flex items-center gap-1"
+              >
+                Learn more <FaArrowRight />
+              </Link>
+            </div>
+          </Card>
+          <Card>
+            <div className="flex h-full flex-col">
+              <div className="text-xl">Queue</div>
+              <div className="text-md">All about queue and its operations!</div>
+              <Link
+                href="/algorithms/queue"
+                className="link mt-auto flex items-center gap-1"
+              >
+                Learn more <FaArrowRight />
+              </Link>
+            </div>
+          </Card>
+          <Card>
+            <div className="flex h-full flex-col">
+              <div className="text-xl">Tree</div>
+              <div className="text-md">
+                Learn about the tree data structure and its traversal methods!
+              </div>
+              <Link
+                href="/algorithms/tree"
+                className="link mt-auto flex items-center gap-1"
+              >
+                Learn more <FaArrowRight />
+              </Link>
+            </div>
+          </Card>
         </div>
       </section>
       <section className="container mx-auto flex flex-col items-center justify-center text-center md:flex-row md:text-start">

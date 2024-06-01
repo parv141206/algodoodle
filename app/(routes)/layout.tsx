@@ -1,7 +1,7 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../globals.css";
 import ThemeContext from "../_contexts/Theme";
 import { Navbar } from "../_components/Navbar";
@@ -14,6 +14,21 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const [theme, setTheme] = useState("light");
   const [arrayInput, setArrayInput] = useState([4, 2, 6, 3, 1, 9]);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      localStorage.setItem("theme", theme);
+    }
+  }, [theme, isMounted]);
 
   return (
     <html lang="en" className={`${theme === "dark" ? "dark" : ""}`}>
@@ -25,7 +40,6 @@ export default function RootLayout({
           content="Learn algorithms by interacting with them!"
         />
         <link rel="manifest" href="/manifest.json" />
-
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -43,13 +57,12 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-
         <title>AlgoDoodle</title>
       </head>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <ArrayInputContext.Provider value={{ arrayInput, setArrayInput }}>
           <body
-            className={`${inter.className} min-h-screen  overflow-x-hidden transition-all dark:bg-gray-950 dark:text-gray-200`}
+            className={`${inter.className} min-h-screen overflow-x-hidden transition-all dark:bg-gray-950 dark:text-gray-200`}
           >
             <div className="min-h-screen bg-main-bg dark:bg-main-bg-dark">
               <Navbar />
