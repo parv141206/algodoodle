@@ -79,7 +79,9 @@ const Page: FC = () => {
         </li>
         <br />
         <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
-          <>Time Complexity: O(n) <br/> Space Complexity: O(1) <br/> </>
+          <>
+            Time Complexity: O(n) <br /> Space Complexity: O(1) <br />{" "}
+          </>
         </DoodleCard>
       </AlgorithmInfo>
       <AlgorithmWorking>
@@ -88,7 +90,9 @@ const Page: FC = () => {
           accentColor="bg-emerald-400"
           class=""
         >
-          <>{`Pointer at address: ${pointer1} <br/> Target: ${target}`}</>
+          <>
+            Pointer at address: {pointer1} <br /> Target: ${target}
+          </>
         </DoodleCard>
         <DoodleArray
           arr={arr}
