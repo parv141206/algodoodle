@@ -6,6 +6,7 @@ import "../globals.css";
 import ThemeContext from "../_contexts/Theme";
 import { Navbar } from "../_components/Navbar";
 import ArrayInputContext from "../_contexts/ArrayInput";
+import Footer from "../_components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,6 +68,7 @@ export default function RootLayout({
             <div className="min-h-screen bg-main-bg dark:bg-main-bg-dark">
               <Navbar />
               {children}
+              <Footer />
             </div>
           </body>
         </ArrayInputContext.Provider>

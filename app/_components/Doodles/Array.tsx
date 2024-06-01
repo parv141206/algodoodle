@@ -30,7 +30,7 @@ const DoodleArray: FC<Props> = ({
 
   return (
     <div
-      className={`m-20 flex w-fit ${isRow ? "flex-row" : isReverse ? "flex-col-reverse" : "flex-col"} ${className}`}
+      className={`m-7 flex w-fit md:m-20 ${isRow ? "flex-row" : isReverse ? "flex-col-reverse" : "flex-col"} ${className}`}
     >
       {arr.map((num, index) => (
         <div
