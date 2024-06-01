@@ -8,19 +8,7 @@
 
   --_g: #0000 90deg, var(--c1) 0;
 }
-/* .main-bg { */
-/* --s: 150px; 
-  --c1: #00000000;
-  --c2: #049bff09;
 
-  --l: var(--c1) 20%, #0000 0;
-  --g: 35%, var(--c2) 0 45%, var(--c1) 0;
-  background: linear-gradient(45deg, var(--l) 45%, var(--c1) 0 70%, #0000 0),
-    linear-gradient(-45deg, var(--l) var(--g) 70%, #0000 0),
-    linear-gradient(45deg, var(--c1) var(--g));
-  background-size: var(--s) var(--s); */
-
-/* } */
 body {
   scroll-behavior: smooth;
 }
@@ -34,4 +22,25 @@ body {
 }
 .input {
   @apply rounded-md border-2 border-gray-500 bg-gray-100 p-3 outline-none dark:bg-gray-900;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-50 dark:bg-gray-900;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply rounded-xl bg-blue-400;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-600;
 }

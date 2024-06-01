@@ -22,7 +22,7 @@ const Sidebar = ({
 
   const renderDirectory = (structure: DirectoryStructure) => {
     return (
-      <ul className="flex flex-col gap-1  p-3 md:w-fit">
+      <ul className="flex flex-col gap-1 p-3 md:w-auto">
         {structure.map((item) => {
           const itemName = capitalizeFirstLetter(
             item.name === "" ? "root" : item.name,
@@ -54,8 +54,8 @@ const Sidebar = ({
   );
 
   return (
-    <aside className="sticky top-16 z-30 flex h-fit w-full flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:w-fit md:rounded-lg ">
-      <div className="flex justify-between">
+    <aside className="sticky top-16 z-30 flex w-full flex-col gap-1 border-b  bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:h-[80vh] md:w-auto md:max-w-xs md:rounded-lg">
+      <div className="py-1Z flex justify-between border-b-2">
         <div className="text-xl font-bold">Algorithms</div>
         <button
           onClick={() => {
@@ -70,8 +70,8 @@ const Sidebar = ({
       <div
         className={`transition-all md:block ${
           isExpanded
-            ? "max-h-max opacity-100 md:max-h-max md:opacity-100"
-            : "hidden max-h-0 opacity-0 md:max-h-max md:opacity-100"
+            ? "max-h-max overflow-y-auto opacity-100 md:max-h-[80vh] md:opacity-100"
+            : "hidden max-h-0 overflow-y-auto opacity-0 md:max-h-[80vh] md:opacity-100"
         }`}
       >
         {isLoading ? (

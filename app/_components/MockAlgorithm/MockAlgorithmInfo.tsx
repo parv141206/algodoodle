@@ -53,7 +53,7 @@ const MockAlgorithmInfo: FC = () => {
                 <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
                   <>
                     {
-                      "Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br> "
+                      "Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br/> "
                     }
                   </>
                 </DoodleCard>

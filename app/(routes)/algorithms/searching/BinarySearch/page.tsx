@@ -79,7 +79,7 @@ const Page: FC = () => {
         </li>
         <br />
         <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
-          <>{"Time Complexity: O(log n) <br/> Space Complexity: O(1) <br> "}</>
+          <>{"Time Complexity: O(log n) <br/> Space Complexity: O(1) <br/> "}</>
         </DoodleCard>
       </AlgorithmInfo>
       <AlgorithmWorking>
@@ -99,7 +99,6 @@ const Page: FC = () => {
           direction={isPhone ? "column" : "row"}
           highlight_1={low}
           highlight_2={high}
-          
         />
         <p className="flex items-center gap-3">
           {targetFound ? (

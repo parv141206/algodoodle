@@ -81,12 +81,12 @@ const Page: FC = () => {
 
           <br />
           <DoodleCard title="Stats!" accentColor="bg-blue-400" class="">
-            <>{"Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br> "}</>
+            <>{"Time Complexity: O(n^2) <br/> Space Complexity: O(1) <br/> "}</>
           </DoodleCard>
         </AlgorithmInfo>
         <AlgorithmWorking>
           <DoodleCard title="Current values" accentColor="bg-blue-400" class="">
-            <>{`Number of passes: ${i}<br> Current index: ${j}<br>${message}`}</>
+            <>{`Number of passes: ${i}<br/> Current index: ${j}<br/>${message}`}</>
           </DoodleCard>
           <DoodleArray
             arr={arr}
