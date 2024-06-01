@@ -88,7 +88,7 @@ const Sidebar = ({
   );
 
   return (
-    <aside className="sticky top-0 z-30 flex flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:h-[80vh] md:w-auto md:max-w-xs md:rounded-lg">
+    <aside className="sticky top-16 z-30 flex flex-col gap-1 border-b bg-gray-100 p-3 dark:border-gray-700 dark:bg-gray-900 md:top-20 md:h-[80vh] md:w-auto md:max-w-xs md:rounded-lg">
       <div className="flex justify-between border-b-2 py-1">
         <div className="text-xl font-bold">Algorithms</div>
         <button
