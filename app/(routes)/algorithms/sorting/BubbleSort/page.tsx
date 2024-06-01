@@ -87,7 +87,10 @@ const Page: FC = () => {
         <AlgorithmWorking>
           <DoodleCard title="Current values" accentColor="bg-blue-400" class="">
             <>
-              {`Number of passes: ${i}<br/> Number of swaps: ${j}<br/>${message}`}
+              Number of passes: {i}
+              <br /> Number of swaps: {j}
+              <br />
+              {message}
             </>
           </DoodleCard>
           <DoodleArray

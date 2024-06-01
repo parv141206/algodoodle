@@ -76,7 +76,6 @@ const Page: FC = () => {
         <Link href={"StackOverflow"}>
           <DoodleErrorCard mdVisible={true}>
             <>
-              {" "}
               Adding more elements than the size of stack can cause STACK
               OVERFLOW error. Click to learn more.
             </>

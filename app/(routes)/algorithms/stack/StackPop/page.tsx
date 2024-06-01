@@ -72,7 +72,6 @@ const Page: FC = () => {
         <Link href={"StackUnderflow"}>
           <DoodleErrorCard mdVisible={true}>
             <>
-              {" "}
               Removing more elements after TOP is 0 (stack is empty) can cause
               STACK UNDERFLOW error. Click to learn more.
             </>

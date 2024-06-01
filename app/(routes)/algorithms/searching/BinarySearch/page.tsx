@@ -89,7 +89,20 @@ const Page: FC = () => {
           class=""
         >
           <>
-            {`High: ${high} | Low: ${low} | Pointer: ${Math.floor((low + high) / 2)} | Step: ${step} <br/>  ${targetFound ? " Target found" : target < arr[Math.floor((low + high) / 2)] ? target + " < " + arr[Math.floor((low + high) / 2)] + " so we move to the left half" : target + " > " + arr[Math.floor((low + high) / 2)] + " so we move to the right half"}  <br/>`}
+            High: {high} | Low: {low} | Pointer: {Math.floor((low + high) / 2)}{" "}
+            | Step: {step} <br />{" "}
+            {targetFound
+              ? " Target found"
+              : target < arr[Math.floor((low + high) / 2)]
+                ? target +
+                  " < " +
+                  arr[Math.floor((low + high) / 2)] +
+                  " so we move to the left half"
+                : target +
+                  " > " +
+                  arr[Math.floor((low + high) / 2)] +
+                  " so we move to the right half"}{" "}
+            <br />
           </>
         </DoodleCard>
         <DoodleArray

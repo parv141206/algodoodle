@@ -67,7 +67,12 @@ const MockAlgorithmWorking: FC = () => {
                 accentColor="bg-blue-400"
                 class=""
               >
-                <>{`Number of passes: ${i}<br/> Current index: ${j}<br/>${message}`}</>
+                <>
+                  Number of passes: {i}
+                  <br /> Current index: {j}
+                  <br />
+                  {message}
+                </>
               </DoodleCard>
               <DoodleArray
                 arr={arr}
