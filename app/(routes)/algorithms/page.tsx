@@ -1,10 +1,18 @@
+"use client"
 import MacWindowMockup from "@/app/_components/MacWindowMockup";
 import Image from "next/image";
 import { FC } from "react";
-
+import { motion } from "framer-motion";
 const Page: FC = () => {
   return (
-    <div className="relative flex flex-col gap-7 overflow-x-hidden p-6 font-sans">
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{
+        duration: 1.5,
+      }}
+      animate={{ opacity: 1 }}
+      className="relative flex flex-col gap-7 overflow-x-hidden p-6 font-sans"
+    >
       <Image
         className="absolute -top-[8vh] left-0 z-[2] rotate-[270deg] opacity-25 md:-top-[40vh] md:rotate-[180deg]"
         src={"/assets/doodle-arrow.svg"}
@@ -108,7 +116,7 @@ const Page: FC = () => {
           </li>
         </ul>
       </MacWindowMockup>
-    </div>
+    </motion.div>
   );
 };
 

@@ -38,6 +38,7 @@ export const Navbar: React.FC = () => {
       >
         <Link href={"/"}>Home</Link>
         <Link href={"/algorithms"}>Algorithms</Link>
+        <Link href={"/chat"}>Chat</Link>
         <Link href={"/about"}>About</Link>
         <button
           className="rounded-md p-1 text-3xl font-bold dark:text-white"

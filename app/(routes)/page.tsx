@@ -9,7 +9,7 @@ import MockAlgorithmInfo from "../_components/MockAlgorithm/MockAlgorithmInfo";
 import AlgorithmCodeBlock from "../_components/AlgorithmStructure/AlgorithmCodeBlock";
 import Card from "../_components/DoodleCards/Card";
 import { FaArrowRight } from "react-icons/fa6";
-
+import {motion} from "framer-motion"
 const Home: React.FC = () => {
   
   useEffect(() => {
@@ -44,7 +44,11 @@ const Home: React.FC = () => {
     hackerlook("AlgoDoodle", 50);
   }, []);
   return (
-    <main className="bg-pattern flex flex-col gap-5">
+    <motion.main    initial={{ opacity: 0 }}
+      transition={{
+        duration: 1.5,
+      }}
+      animate={{ opacity: 1 }} className="bg-pattern flex flex-col gap-5">
       <section className=" container mx-auto  flex min-h-[90vh] items-center justify-center    p-3 ">
         <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
           <div className="flex flex-col items-center justify-center gap-5">
@@ -210,7 +214,7 @@ const Home: React.FC = () => {
           />
         </Link>
       </section>
-    </main>
+    </motion.main>
   );
 };
 
