@@ -37,12 +37,12 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply rounded-xl bg-blue-400;
+  @apply rounded-xl bg-gray-400;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-blue-600;
+  @apply bg-gray-600;
 }
 .link {
   @apply text-blue-500;
