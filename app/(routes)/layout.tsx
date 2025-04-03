@@ -68,7 +68,6 @@ export default function RootLayout({
             <div className="min-h-screen bg-main-bg dark:bg-main-bg-dark">
               <Navbar />
               {children}
-              <Footer />
             </div>
           </body>
         </ArrayInputContext.Provider>

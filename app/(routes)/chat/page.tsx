@@ -125,10 +125,10 @@ export default function Chat() {
     console.log(translatedToEnglish);
     //return;
     try {
-      const response = await fetch("http://192.168.31.84:5000/chat", {
+      const response = await fetch("http://192.168.72.241:5000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: "Hello" }),
+        body: JSON.stringify({ query: translatedToEnglish }),
       });
 
       const data = await response.json();
@@ -164,22 +164,8 @@ export default function Chat() {
         duration: 1.5,
       }}
       animate={{ opacity: 1 }}
-      className="relative mx-auto flex h-[100dvh] max-w-4xl flex-col px-4 py-0 md:h-[70vh]"
+      className="relative mx-auto flex h-[100dvh] max-w-4xl flex-col px-4 py-0 md:h-[90vh]"
     >
-      <div className="absolute right-4 top-4 z-10">
-        <select
-          value={selectedLang}
-          onChange={(e) => setSelectedLang(e.target.value)}
-          className="rounded border bg-white p-2 shadow-sm dark:border-slate-700 dark:bg-slate-950"
-        >
-          {LANGUAGES.map((lang) => (
-            <option key={lang.code} value={lang.code}>
-              {lang.label}
-            </option>
-          ))}
-        </select>
-      </div>
-
       <div className="flex-1 space-y-4 overflow-y-auto pb-20 pt-20 md:pt-16">
         <AnimatePresence>
           {messages.map((message) => (
@@ -191,7 +177,7 @@ export default function Chat() {
               className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
             >
               <div
-                className={`flex max-w-[80%] items-center space-x-2 ${message.sender === "user" ? "flex-row-reverse space-x-reverse" : ""}`}
+                className={`flex max-w-[80%] items-center space-x-2 dark:text-white ${message.sender === "user" ? "flex-row-reverse space-x-reverse" : ""}`}
               >
                 <div
                   className={`flex h-10 w-12 items-center justify-center rounded-full border border-gray-600 p-2 dark:border-slate-700 dark:bg-slate-950 md:w-10 ${message.sender === "user" ? "bg-gray-700 text-white" : "bg-white"}`}
@@ -203,7 +189,7 @@ export default function Chat() {
                   )}
                 </div>
                 <div
-                  className={`rounded-lg border border-gray-600 p-3 dark:border-slate-700 dark:bg-slate-950 ${message.sender === "user" ? "bg-gray-700 text-white" : "bg-white"}`}
+                  className={`rounded-lg text-black dark:text-white ${message.sender === "user" ? " bg-gray-200 p-3 dark:bg-gray-800 dark:text-white" : ""}`}
                 >
                   <p className="text-sm">{message.text}</p>
                 </div>
@@ -225,7 +211,7 @@ export default function Chat() {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Type your message..."
+            placeholder="Stuck in recursion? Let’s unwind 🚀"
             className="w-full flex-1 rounded-lg border bg-white p-3 focus:outline-none focus:ring-2 dark:border-slate-700 dark:bg-slate-950"
           />
           <button
@@ -233,7 +219,7 @@ export default function Chat() {
             className="rounded-lg bg-gray-700 p-3 text-white hover:bg-gray-600 disabled:opacity-50 dark:border-slate-700 dark:bg-slate-950"
             disabled={!inputValue.trim() || isLoading}
           >
-            <Send size={20} />
+            {"~>"}
           </button>
         </div>
       </motion.form>
