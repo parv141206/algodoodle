@@ -125,10 +125,10 @@ export default function Chat() {
     console.log(translatedToEnglish);
     //return;
     try {
-      const response = await fetch("http://192.168.31.108:5000/chat", {
+      const response = await fetch("http://192.168.31.84:5000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: translatedToEnglish }),
+        body: JSON.stringify({ query: "Hello" }),
       });
 
       const data = await response.json();
