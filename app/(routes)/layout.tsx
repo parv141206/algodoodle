@@ -58,6 +58,7 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <meta name="google-site-verification" content="Plv7-l-9fD_Sg9-FqpB2yaOhOaV5njShdmBquxUa4fU" />
         <title>AlgoDoodle</title>
       </head>
       <ThemeContext.Provider value={{ theme, setTheme }}>
