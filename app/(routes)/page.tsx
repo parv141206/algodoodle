@@ -101,7 +101,7 @@ const Home: React.FC = () => {
                 fast they work!
               </div>
               <Link
-                href="/algorithms/searching"
+                href="/algorithms/basics/searching"
                 className="link mt-auto flex items-center gap-1"
               >
                 Learn more <FaArrowRight />
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
                 Sort elements like a pro with various sorting algorithms!
               </div>
               <Link
-                href="/algorithms/sorting"
+                href="/algorithms/basics/sorting"
                 className="link mt-auto flex items-center gap-1"
               >
                 Learn more <FaArrowRight />
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
                 Explore stack data structure and its operations!
               </div>
               <Link
-                href="/algorithms/stack"
+                href="/algorithms/data_structures/stack"
                 className="link mt-auto flex items-center gap-1"
               >
                 Learn more <FaArrowRight />
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
               <div className="text-xl">Queue</div>
               <div className="text-md">All about queue and its operations!</div>
               <Link
-                href="/algorithms/queue"
+                href="/algorithms/data_structures/queue"
                 className="link mt-auto flex items-center gap-1"
               >
                 Learn more <FaArrowRight />
@@ -155,7 +155,21 @@ const Home: React.FC = () => {
                 Learn about the tree data structure and its traversal methods!
               </div>
               <Link
-                href="/algorithms/tree"
+                href="/algorithms/data_structures/tree"
+                className="link mt-auto flex items-center gap-1"
+              >
+                Learn more <FaArrowRight />
+              </Link>
+            </div>
+          </Card>
+          <Card>
+            <div className="flex h-full flex-col">
+              <div className="text-xl">Dynamic Programming</div>
+              <div className="text-md">
+                Master DP with interactive tables, backtracking, and step-by-step visualizations!
+              </div>
+              <Link
+                href="/algorithms/approaches/dp"
                 className="link mt-auto flex items-center gap-1"
               >
                 Learn more <FaArrowRight />
@@ -196,7 +210,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       <div className="container mx-auto p-5">
-        <AlgorithmCodeBlock algorithmName="sorting/selectionsort" />
+        <AlgorithmCodeBlock algorithmName="basics/sorting/selectionsort" />
       </div>
       <section className="container mx-auto flex flex-col items-center justify-center gap-7 p-5">
         <div className="text-center text-3xl font-bold md:text-5xl">

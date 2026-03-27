@@ -46,9 +46,9 @@ export default function Layout({
   }, []);
 
   return (
-    <div className="container mx-auto flex flex-col gap-5 md:flex-row  md:p-5">
+    <div className="container mx-auto flex flex-col gap-5 md:flex-row  md:p-5 relative">
       <Sidebar directoryStructure={directoryStructure} isLoading={isLoading} />
-      <div className="p-3">{children}</div>
+      <div className="p-3 flex-1 min-w-0 overflow-x-hidden">{children}</div>
       <OnThisPage />
     </div>
   );

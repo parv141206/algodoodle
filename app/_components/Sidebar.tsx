@@ -22,8 +22,11 @@ const Sidebar = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const capitalizeFirstLetter = (string: string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  const formatName = (string: string) => {
+    return string
+      .split("_")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   const handleSearchInputChange = (
@@ -55,7 +58,7 @@ const Sidebar = ({
     return (
       <ul className="flex w-full flex-col gap-1 p-3 md:w-auto">
         {structure.map((item) => {
-          const itemName = capitalizeFirstLetter(
+          const itemName = formatName(
             item.name === "" ? "root" : item.name,
           );
 
